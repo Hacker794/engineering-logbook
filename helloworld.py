@@ -20,3 +20,13 @@ def miles_to_km(miles):
     return round(miles * 1.60934, 2)
 
 print(miles_to_km(10))  # Example usage with 10 miles
+
+# Example password strength checker based on the length
+
+def password_strength(password):
+    if len(password) < 8:
+        return "Weak"
+    return "Strong"
+
+print(password_strength("hello"))  # Example usage with a weak password
+print(password_strength("Python123"))  # Example usage with a strong password
