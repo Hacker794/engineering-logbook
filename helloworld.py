@@ -1,4 +1,5 @@
 import random
+from tracemalloc import start
 
 # Basket total with discount program
 
@@ -76,6 +77,17 @@ def theoretical_wait(lam, mu):
     return 1 / (mu - lam)
 
 # Simulating thousands of shoppers with a random exponential distribution for arrival gapsand service times. Also simulating the average time spent in system
+
+def simulate(lam, mu, customers=10000):
+    t = till_free = total = 0.0
+    for _ in range(customers):
+        t += random.expovariate(lam) # next arrival
+        start = max(t, till_free) # wait for the till
+        till_free = start + random.expovariate(mu)
+        total += till_free - t # time in system
+    return total / customers
+
+
 
 
 
