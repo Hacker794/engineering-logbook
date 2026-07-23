@@ -49,3 +49,24 @@ def guess_game():
         print(f"Wrong! The number was {secret}.")
 
 guess_game()
+
+### 
+# 
+# THE REAL PROBLEM:
+# 
+# BUILDING THE QUEUE
+# 
+# - Shoppers arrive at some rate (e.g., 1 shopper every 2 minutes)
+# 
+# - A till serves at some rate (e.g., 1 shopper every 3 minutes)
+# 
+# - if the till is busy, the shopper waits in a queue
+# 
+# - we want to measure the average wait time for each shopper in the system
+# 
+# ###
+
+
+
+
+
