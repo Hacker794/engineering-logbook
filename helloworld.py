@@ -66,6 +66,17 @@ guess_game()
 # 
 # ###
 
+# Implementing the M/M/1 formula for the average wait time in a queueing system
+# If arrivals meet or exceed service rate, the system becomes unstable and the average wait time approaches infinity.
+
+def theoretical_wait(lam, mu):
+    """M/M/1 average time in system (minutes)."""
+    if lam >= mu:
+        return float('inf') # queue explodes
+    return 1 / (mu - lam)
+
+# Simulating thousands of shoppers with a random exponential distribution for arrival gapsand service times. Also simulating the average time spent in system
+
 
 
 
