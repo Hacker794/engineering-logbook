@@ -87,7 +87,11 @@ def simulate(lam, mu, customers=10000):
         total += till_free - t # time in system
     return total / customers
 
+#Proving the maths
+#We will now run a simulation across a range of arrival rates and compare the theoretical and simulated average wait times. They should agree closely if the model is correct.
 
+for lam in [1.0, 1.4, 1.6, 1.8, 1.9]:
+    print(lam, round(theoretical_wait(lam, 2), 2), round(simulate(lam, 2), 2))
 
 
 
