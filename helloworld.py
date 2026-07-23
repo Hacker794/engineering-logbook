@@ -1,3 +1,5 @@
+import random
+
 # Basket total with discount program
 
 def basket_total(prices, discount=0.0):
@@ -35,3 +37,15 @@ def password_strength(password):
 
 print(password_strength("Password123!"))  # Example usage with a strong password
 print(password_strength("weakpassword"))  # Example usage with a weak password
+
+def guess_game():
+    secret = random.randint(1, 10)
+
+    guess = int(input("Guess a number between 1 and 10: "))
+
+    if guess == secret:
+        print("Correct!")
+    else:
+        print(f"Wrong! The number was {secret}.")
+
+guess_game()
