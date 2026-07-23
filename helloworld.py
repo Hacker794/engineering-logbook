@@ -21,12 +21,17 @@ def miles_to_km(miles):
 
 print(miles_to_km(10))  # Example usage with 10 miles
 
-# Example password strength checker based on the length
+# Example password strength checker based on the length, digit, uppercase, lowercase, and special character character
 
 def password_strength(password):
-    if len(password) < 8:
-        return "Weak"
-    return "Strong"
+    has_upper = any(c.isupper() for c in password)
+    has_lower = any(c.islower() for c in password)
+    has_digit = any(c.isdigit() for c in password)
+    has_special = any(not c.isalnum() for c in password)
 
-print(password_strength("hello"))  # Example usage with a weak password
-print(password_strength("Python123"))  # Example usage with a strong password
+    if len(password) >= 8 and has_upper and has_lower and has_digit and has_special:
+        return "Strong"
+    return "Weak"
+
+print(password_strength("Password123!"))  # Example usage with a strong password
+print(password_strength("weakpassword"))  # Example usage with a weak password
