@@ -48,10 +48,9 @@ for lam in [1.0, 1.4, 1.6, 1.8, 1.9]:
 print()
 
 
-# Queue Model no.2 for when there are 2 tills. The average wait time is now halved, as there are 2 tills to serve the shoppers.
-# M/M/2 queueing system. 
+# Queue Model no.2 for when there are 2 tills. 2nd till buys an enourmous amount of time to serve each customer.
 
-# Theoretical average wait time in system for M/M/2 queueing system. The formula is more complex than M/M/1, but can be derived from the birth-death process.
+# Theoretical average wait time in system for M/M/2 queueing system. 
 
 def theoretical_wait_mm2(lam, mu):
     """M/M/2 average time in system (minutes)."""
