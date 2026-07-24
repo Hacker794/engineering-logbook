@@ -103,4 +103,3 @@ def simulate_mm2(lam, mu, customers=1000000):
 for lam in [1.0, 1.4, 1.6, 1.8, 1.9]:
     print(lam, round(theoretical_wait_mm2(lam, 2), 2), round(simulate_mm2(lam, 2), 2))
 
-# Fits model to data. This is a simple linear regression model that fits the theoretical wait time to the simulated wait time. The model is then used to predict the average wait time for a given arrival rate.
