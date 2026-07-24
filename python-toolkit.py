@@ -1,5 +1,4 @@
 import random
-from tracemalloc import start
 
 # Basket total with discount program
 
@@ -11,11 +10,11 @@ print(basket_total([1.35, 2.20, 0.99], discount=0.1))  # Example usage with a 10
 
 # Tip splitter program
 
-def tip_splitter(bill, tip_percent=0.15, people=1):
-    total = bill * (1 + tip_percent)
+def tip_splitter(bill, tip_fraction=0.15, people=1):
+    total = bill * (1 + tip_fraction)
     return round(total / people, 2)
 
-print(tip_splitter(80, tip_percent=0.15, people=4))  # Example usage with a 15% tip and 4 people and total bill of 80
+print(tip_splitter(80, tip_fraction=0.15, people=4))  # Example usage with a 15% tip and 4 people and total bill of 80
 
 # Example unit converter (from miles to kilometers)
 
@@ -42,12 +41,23 @@ print(password_strength("weakpassword"))  # Example usage with a weak password
 def guess_game():
     secret = random.randint(1, 10)
 
-    guess = int(input("Guess a number between 1 and 10: "))
+    attempts = 0
 
-    if guess == secret:
-        print("Correct!")
-    else:
-        print(f"Wrong! The number was {secret}.")
+    while True:
+        try:
+            guess = int(input("Guess a number between 1 and 10: "))
+            attempts += 1
+
+            if guess < secret:
+                print("Too low! Try again.")
+            elif guess > secret:
+                print("Too high! Try again.\n")
+            else:
+                print(f"\nCongratulations! You guessed the number in {attempts} attempt(s).")
+                break
+
+        except ValueError:
+            print("Please enter a valid number.")
 
 guess_game()
 
